@@ -1,4 +1,4 @@
-package com.feng.java;
+package com.feng.string;
 
 public class StringTest2 {
     public static void main(String[] args) {
