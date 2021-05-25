@@ -17,5 +17,10 @@ public class StringTest3 {
         System.out.println(s4==s5);//false
         System.out.println(s6==s5);//true
         System.out.println(s7==s5);//true
+
+        System.out.println("------------------");
+
+        final String s8 = "abc";
+        System.out.println((s8+"def")==s5);
     }
 }
