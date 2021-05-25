@@ -21,6 +21,6 @@ public class StringTest3 {
         System.out.println("------------------");
 
         final String s8 = "abc";
-        System.out.println((s8+"def")==s5);
+        System.out.println((s8+"def")==s5);//true
     }
 }
