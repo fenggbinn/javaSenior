@@ -26,4 +26,14 @@ public class InstantTest {
         long e = instant.toEpochMilli();
         System.out.println(e);
     }
+
+    @Test
+    public void test3(){
+        /**
+         * 2021-05-27T08:35:27.803Z
+         * 1622104527803
+         */
+        Instant instant = Instant.ofEpochMilli(1622104527803l);
+        System.out.println(instant);
+    }
 }
