@@ -22,5 +22,12 @@ public class jdk8NewDateClass {
 
         LocalDateTime localDateTime1 = LocalDateTime.of(2021,5,27,15,24,5);
         System.out.println(localDateTime1);
+
+        System.out.println("----------------------");
+
+        System.out.println(localDateTime.getDayOfMonth());
+        System.out.println(localDateTime.getDayOfWeek());
+        System.out.println(localDateTime.getDayOfYear());
+        System.out.println(localDateTime.getMinute());
     }
 }
