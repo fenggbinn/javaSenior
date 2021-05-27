@@ -48,5 +48,11 @@ public class jdk8NewDateClass {
         LocalDateTime localDateTime2 = localDateTime.plusDays(2);
         System.out.println(localDateTime);
         System.out.println(localDateTime2);
+
+        System.out.println("--------------------");
+
+        LocalDate localDate2 = localDate.minusWeeks(3);
+        System.out.println(localDate);
+        System.out.println(localDate2);
     }
 }
