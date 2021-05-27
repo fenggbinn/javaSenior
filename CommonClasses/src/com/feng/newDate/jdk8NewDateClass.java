@@ -29,5 +29,11 @@ public class jdk8NewDateClass {
         System.out.println(localDateTime.getDayOfWeek());
         System.out.println(localDateTime.getDayOfYear());
         System.out.println(localDateTime.getMinute());
+
+        System.out.println("----------------------");
+
+        LocalDate localDate1 = localDate.withDayOfMonth(31);
+        System.out.println(localDate);
+        System.out.println(localDate1);
     }
 }
