@@ -17,5 +17,10 @@ public class jdk8NewDateClass {
         System.out.println(localDate);
         System.out.println(localTime);
         System.out.println(localDateTime);
+
+        System.out.println("----------------------");
+
+        LocalDateTime localDateTime1 = LocalDateTime.of(2021,5,27,15,24,5);
+        System.out.println(localDateTime1);
     }
 }
