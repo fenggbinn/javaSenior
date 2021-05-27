@@ -10,6 +10,7 @@ public class jdk8NewDateClass {
     @Test
     public void test1(){
         //实例化
+        System.out.println("======================");
         LocalDate localDate = LocalDate.now();
         LocalTime localTime = LocalTime.now();
         LocalDateTime localDateTime = LocalDateTime.now();
@@ -35,5 +36,11 @@ public class jdk8NewDateClass {
         LocalDate localDate1 = localDate.withDayOfMonth(31);
         System.out.println(localDate);
         System.out.println(localDate1);
+
+        System.out.println("-----------------------");
+
+        LocalTime localTime1 = localTime.withHour(19);
+        System.out.println(localTime);
+        System.out.println(localTime1);
     }
 }
