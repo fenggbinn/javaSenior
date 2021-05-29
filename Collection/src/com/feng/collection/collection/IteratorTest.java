@@ -44,4 +44,24 @@ public class IteratorTest {
             System.out.println(iterator.next());
         }
     }
+
+    @Test
+    public void test3(){
+        Collection col = new ArrayList();
+        col.add("1");
+        col.add("2");
+        col.add("3");
+        System.out.println(col);
+        System.out.println("-----------------");
+
+        /*Iterator iterator = col.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }*/
+
+        for (Object obj :
+                col) {
+            System.out.println(obj);
+        }
+    }
 }
