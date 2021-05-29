@@ -2,6 +2,8 @@ package com.feng.enumTest;
 
 import org.junit.Test;
 
+import javax.sound.sampled.Line;
+
 /**
  * Enum类的主要方法:
  * 	values()方法:返回枚举类型的对象数组。该方法可以很方便地遍历所有的枚举值。
@@ -26,10 +28,18 @@ public class EnumMethods {
 
         Season23 valueOf = Season23.valueOf("WINTER");
         System.out.println(valueOf);
+
+        System.out.println("-------------------------");
+
+        valueOf.show();
+
     }
 }
 
-enum Season23{
+interface info{
+    void show();
+}
+enum Season23 implements info {
     SPRING("春天","春暖花开"),
     SUMMER("夏天","夏日炎炎"),
     AUTUMN("秋天","秋高气爽"),
@@ -60,5 +70,9 @@ enum Season23{
                 '}';
     }
 
+    @Override
+    public void show(){
+        System.out.println("这是一个季节");
+    }
 
 }
