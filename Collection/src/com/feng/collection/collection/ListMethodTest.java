@@ -68,6 +68,9 @@ public class ListMethodTest {
         System.out.println(a1);
         a1.remove(1);
         System.out.println(a1);
+        //要通过remove()删除数字，必须通过new Integer(数字)才可以
+        a1.remove(new Integer(1));
+        System.out.println(a1);
 
 
         System.out.println("--------indexOf()----------");
