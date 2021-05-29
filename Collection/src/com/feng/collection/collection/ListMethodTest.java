@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class ListMethodTest {
@@ -94,5 +95,21 @@ public class ListMethodTest {
         List s = a1.subList(0, 3);//左闭右开[a,b)
         System.out.println(s);
         System.out.println(a1);//原来的ArrayList不变，直接产生一个新的子集合
+
+        System.out.println("-----------size()-----------");
+        System.out.println(a1);
+        System.out.println(a1.size());
+
+        System.out.println("----ArrayList：集合的遍历-----");
+        Iterator iter = a1.iterator();
+        System.out.println("===iterator()===");
+        while (iter.hasNext()){
+            System.out.println(iter.next());
+        }
+        System.out.println("===foreach()===");
+        for (Object list :
+                a1) {
+            System.out.println(list);
+        }
     }
 }
