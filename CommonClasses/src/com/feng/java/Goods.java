@@ -1,5 +1,10 @@
 package com.feng.java;
 
+import com.feng.annotation.MyAnnotation;
+
+//@MyAnnotation
+//@MyAnnotation("000")
+@MyAnnotation(value = "abc")
 public class Goods implements Comparable {
     private int gid;
     private String gname;
