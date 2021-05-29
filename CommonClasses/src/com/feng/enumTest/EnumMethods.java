@@ -33,6 +33,13 @@ public class EnumMethods {
 
         valueOf.show();
 
+        System.out.println("-------------------------");
+
+        for (int i = 0; i < values.length; i++) {
+            System.out.println(values[i]);
+            values[i].show();
+        }
+
     }
 }
 
@@ -40,10 +47,30 @@ interface info{
     void show();
 }
 enum Season23 implements info {
-    SPRING("春天","春暖花开"),
-    SUMMER("夏天","夏日炎炎"),
-    AUTUMN("秋天","秋高气爽"),
-    WINTER("冬天","冰天雪地");
+    SPRING("春天","春暖花开"){
+        @Override
+        public void show() {
+            System.out.println("春眠不觉晓");
+        }
+    },
+    SUMMER("夏天","夏日炎炎"){
+        @Override
+        public void show() {
+            System.out.println("夏日");
+        }
+    },
+    AUTUMN("秋天","秋高气爽"){
+        @Override
+        public void show() {
+            System.out.println("秋天不回来");
+        }
+    },
+    WINTER("冬天","冰天雪地"){
+        @Override
+        public void show() {
+            System.out.println("冬至");
+        }
+    };
     private final String seasonName;
     private final String seasonDesc;
 
