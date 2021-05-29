@@ -53,6 +53,7 @@ public class ListMethodTest {
         a1.add("今天");
         a1.add("星期");
         a1.add("六");
+        a1.add(1);
         System.out.println(a1);
 
         System.out.println("--------get()----------");
@@ -61,6 +62,7 @@ public class ListMethodTest {
 //        System.out.println(a1.get(5));//java.lang.IndexOutOfBoundsException: Index: 5, Size: 3
 
         System.out.println("--------remove()----------");
+        System.out.println(a1);
         a1.remove("今天");
         System.out.println(a1);
         a1.remove(1);
