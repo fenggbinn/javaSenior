@@ -26,5 +26,11 @@ public class collectionTest {
 
         System.out.println(collection.size());
         System.out.println(collection1.size());
+
+        System.out.println("----------------------");
+
+        collection1.clear();
+        System.out.println(collection.isEmpty());
+        System.out.println(collection1.isEmpty());
     }
 }
