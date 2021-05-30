@@ -2,8 +2,10 @@ package com.feng.collection.map;
 
 import org.junit.Test;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * 常用方法
@@ -94,5 +96,35 @@ public class MapMethodTest {
         System.out.println(map.equals(map2));
         map2.clear();
         System.out.println(map.equals(map2));//都为空结果为：true
+    }
+
+    /**
+     * 元视图操作的方法:
+     */
+    @Test
+    public void test3(){
+        Map map = new HashMap();
+        Map map2 = new HashMap();
+        map.put(101,"晴天");
+        map2.put(102,"厚厚的云");
+        map2.put(103,"斜阳");
+        map.putAll(map2);
+        System.out.println("-----test/out-------");
+        System.out.println(map);
+
+        System.out.println("-----keySet-------");
+        System.out.println(map);
+        Set set = map.keySet();
+        System.out.println(set);
+
+        System.out.println("-----values-------");
+        System.out.println(map);
+        Collection values = map.values();
+        System.out.println(values);
+
+        System.out.println("-----entrySet-------");
+        System.out.println(map);
+        Set set1 = map.entrySet();
+        System.out.println(set1);
     }
 }
