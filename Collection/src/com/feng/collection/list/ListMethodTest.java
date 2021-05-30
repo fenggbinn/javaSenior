@@ -1,4 +1,16 @@
-package com.feng.collection.collection;
+package com.feng.collection.list;
+
+/**
+ * List
+ * 	存储有序的、可重复的数据。-->“动态”数组
+ * 		ArrayList
+ * 		 LinkedList
+ * 		Vector
+ * 		ArrayList:作为ist接口的主要实现类;线程不安全的，效率高;底层使用Object[] elementData存储
+ * 		LinkedList:对于频繁的插入、删除操作，使用此类效率比ArrayList高;底层使用双向链表存储
+ * 		Vector:作为List接口的古老实现类;线程安全的，效率低;底层使用Object[] elementData存储
+ *
+ */
 
 import org.junit.Test;
 
