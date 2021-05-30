@@ -15,8 +15,8 @@ import java.util.Map;
  * 	元素查询的操作:
  * 		Object get(Object key):获取指定key对应的value
  * 		boolean containsKey(Object key):是否包含指定的key
- * 		boolean containsValue(Object value):是否包含指定的
- * 		valueint size():返回map中key-value对的个数
+ * 		boolean containsValue(Object value):是否包含指定的value
+ * 		int size():返回map中key-value对的个数
  * 		boolean isEmpty():判断当前map是否为空
  * 		boolean equals(Object obj):判断当前map和参数对象obj是否相等
  * 	元视图操作的方法:
@@ -55,5 +55,44 @@ public class MapMethodTest {
         System.out.println(map);
         map.clear();
         System.out.println(map);
+    }
+
+    /**
+     * 元素查询的操作:
+     */
+    @Test
+    public void test2(){
+        Map map = new HashMap();
+        Map map2 = new HashMap();
+        map.put(101,"晴天");
+        map2.put(102,"厚厚的云");
+        map2.put(103,"斜阳");
+        map.putAll(map2);
+        System.out.println("-----test/out-------");
+        System.out.println(map);
+
+        System.out.println("-----get-------");//只能根据key值获取value值
+        System.out.println(map.get(102));
+        System.out.println(map.get("晴天"));
+
+        System.out.println("-----containsKey、Value-------");//返回Boolean值
+        System.out.println(map.containsKey(101));
+        System.out.println(map.containsValue("晴天"));
+
+
+        System.out.println("-----size-------");
+        System.out.println(map.size());
+        System.out.println(map2.size());
+
+
+        System.out.println("-----isEmpty()------");
+        System.out.println(map.isEmpty());
+        map.clear();
+        System.out.println(map.isEmpty());
+
+        System.out.println("------equals-------");
+        System.out.println(map.equals(map2));
+        map2.clear();
+        System.out.println(map.equals(map2));//都为空结果为：true
     }
 }
