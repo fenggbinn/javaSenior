@@ -17,6 +17,12 @@ public class test1 {
             int x = (Integer)obj;
             System.out.println(x);
         }
+        //引入泛型之前，只能使用Object--强制转换
+        /*for (Integer obj :
+                arrayList) {
+            int x = (Integer)obj;
+            System.out.println(x);
+        }*/
     }
 
     @Test
@@ -27,9 +33,15 @@ public class test1 {
         arrayList.add(12);
         arrayList.add(23);
 //        arrayList.add("strr");
-        for (Object obj :
+        /*for (Object obj :
                 arrayList) {
             int x = (Integer)obj;
+            System.out.println(x);
+        }*/
+        //引入泛型之后，可以直接根据数据类型赋值，不用使用Object类强转
+        for (Integer obj :
+                arrayList) {
+            int x = obj;
             System.out.println(x);
         }
     }
