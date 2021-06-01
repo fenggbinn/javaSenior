@@ -1,6 +1,5 @@
-package com.feng.test;
+package com.feng.genericClass;
 
-import com.sun.org.apache.xpath.internal.operations.Or;
 import org.junit.Test;
 
 public class OrderTest {

@@ -1,4 +1,4 @@
-package com.feng.test;
+package com.feng.genericClass;
 
 /**
  * 泛型类

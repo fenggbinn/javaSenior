@@ -1,4 +1,4 @@
-package com.feng.test;
+package com.feng.genericClass;
 
 public class SubOrder3<T> extends Order<T> {
     //这个是泛型类
