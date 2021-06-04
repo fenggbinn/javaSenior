@@ -30,4 +30,15 @@ public class fileMethodsJudge {
         System.out.println(file1.isFile());//true
         System.out.println(file2.isFile());
     }
+
+    @Test
+    public void test3(){
+        File file = new File("kk.txt");
+        File file1 = new File("hi.txt");
+        File file2 = new File("D:/idea/other/io/file");
+        System.out.println(file.exists());
+        System.out.println(file1.exists());
+        System.out.println(file2.exists());
+    }
+
 }
