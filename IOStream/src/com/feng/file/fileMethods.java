@@ -11,13 +11,15 @@ import java.io.File;
  * public string getParent():获取上层文件目录路径。若无，返回null
  * public long length():获取文件长度(即:字节数)。不能获取目录的长度。
  * public long lastModified() :获取最后一次的修改时间，毫秒值
+ *
+ * 如下两个方法适用于文件夹：
  * public string[] list():获取指定目录下的所有文件或者文件目录的名称数组
  * public File[]listFiles():获取指定目录下的所有文件或者文件目录的File数组
  */
 
 public class fileMethods {
     @Test
-    public void test2(){
+    public void test1(){
         File file1 = new File("fi1.txt");
         File file2 = new File("D:/idea/other/io/file/fi2.txt");
 
@@ -28,8 +30,8 @@ public class fileMethods {
         System.out.println(file1.getParent());
         System.out.println(file1.length());
         System.out.println(file1.lastModified());
-        System.out.println(file1.list());
-        System.out.println(file1.listFiles());
+//        System.out.println(file1.list());
+//        System.out.println(file1.listFiles());
 
         System.out.println("--------file2的方法：绝对路径下---------");
         System.out.println(file2.getAbsolutePath());
@@ -38,8 +40,8 @@ public class fileMethods {
         System.out.println(file2.getParent());
         System.out.println(file2.length());
         System.out.println(file2.lastModified());
-        System.out.println(file2.list());
-        System.out.println(file2.listFiles());
+//        System.out.println(file2.list());
+//        System.out.println(file2.listFiles());
 
         /**
          * 目前不存在相应的文件，运行结果：
@@ -87,5 +89,60 @@ public class fileMethods {
          * null
          */
 
+    }
+
+    @Test
+    public void test2(){
+        File file = new File("d:/idea/code/javaSenior");
+        //获取文件夹的相对路径（文件夹名）
+        System.out.println("-----list-----");
+//        System.out.println(file.list());
+        String[] list = file.list();
+        for (String s :
+                list) {
+            System.out.println(s);
+        }
+        //获取文件夹的绝对（完整）路径
+        System.out.println("-----listFiles-----");
+//        System.out.println(file.listFiles());
+        File[] files = file.listFiles();
+        for (File fi :
+                files) {
+            System.out.println(fi);
+        }
+
+        /**
+         * 运行结果：
+         * -----list-----
+         * .git
+         * .gitignore
+         * .idea
+         * Collection
+         * CommonClasses
+         * GenericParadigm
+         * IOStream
+         * javaSenior.iml
+         * jdbc.properties
+         * jdbc2.properties
+         * Multithreading
+         * out
+         * README.md
+         * src
+         * -----listFiles-----
+         * d:\idea\code\javaSenior\.git
+         * d:\idea\code\javaSenior\.gitignore
+         * d:\idea\code\javaSenior\.idea
+         * d:\idea\code\javaSenior\Collection
+         * d:\idea\code\javaSenior\CommonClasses
+         * d:\idea\code\javaSenior\GenericParadigm
+         * d:\idea\code\javaSenior\IOStream
+         * d:\idea\code\javaSenior\javaSenior.iml
+         * d:\idea\code\javaSenior\jdbc.properties
+         * d:\idea\code\javaSenior\jdbc2.properties
+         * d:\idea\code\javaSenior\Multithreading
+         * d:\idea\code\javaSenior\out
+         * d:\idea\code\javaSenior\README.md
+         * d:\idea\code\javaSenior\src
+         */
     }
 }
