@@ -37,4 +37,18 @@ public class FileCreate {
         boolean newFile3 = file3.createNewFile();//idea项目中绝对路径创建的不是文件夹
         System.out.println(newFile3);
     }
+
+    //创建文件目录的方法调用错误了：调用了创建文件的方法，应该调用创建文件目录的方法：mkdir，mkdirs
+    //下面的才是真正的创建文件目录
+    @Test
+    public void test3(){
+        File file = new File("other");
+        if (!file.exists()){
+            file.mkdir();//创建文件目录
+            System.out.println("文件目录创建成功了");
+        }else {
+            file.delete();//删除文件目录
+            System.out.println("文件目录删除成功");
+        }
+    }
 }
