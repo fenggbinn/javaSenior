@@ -145,4 +145,15 @@ public class fileMethods {
          * d:\idea\code\javaSenior\src
          */
     }
+
+    @Test
+    public void test3(){
+//        File file1 = new File("hi.txt");//false,这个文件不存在
+        File file1 = new File("fi1.txt");//true,并且此文件没有了
+//        File file2 = new File("D:/idea/other/io/file/fi2.txt");//false,这个文件已经存在
+        File file2 = new File("D:/idea/other/io/file/fi3.txt");//true，此目录下会产生一个文件，名称是fi3.txt,文件是对fi1.txt的剪切
+
+        boolean b = file1.renameTo(file2);
+        System.out.println(b);
+    }
 }
