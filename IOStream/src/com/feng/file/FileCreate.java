@@ -1,0 +1,25 @@
+package com.feng.file;
+
+import org.junit.Test;
+
+import java.io.File;
+import java.io.IOException;
+
+/**
+ * File类的创建功能
+ * public boolean createNewFile():创建文件。若文件存在，则不创建，返回falsepublic boolean mkdir():创建文件目录。如果此文件目录存在，就不创建了。如果此文件目录的上层目录不存在，也不创建。
+ * public boolean mkdirs():创建文件目录。如果上层文件目录不存在，一并创建注意事项:如果你创建文件或者文件目录没有写盘符路径，那么，默认在项目路径下。
+ * File类的删除功能
+ * public boolean delete():删除文件或者文件夹删除注意事项:T
+ * Java中的删除不走回收站。
+ * 要删除一个文件目录，请注意该文件目录内不能包含文件或者文件目录
+ */
+public class FileCreate {
+    @Test
+    public void test1() throws IOException {
+//        File file = new File("hi.txt");//存在的文件，不创建返回false。
+        File file = new File("hello.txt");//文件不存在，创建新的文件，返回true。
+        boolean newFile = file.createNewFile();
+        System.out.println(newFile);
+    }
+}
