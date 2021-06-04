@@ -22,4 +22,19 @@ public class FileCreate {
         boolean newFile = file.createNewFile();
         System.out.println(newFile);
     }
+
+    @Test
+    public void test2() throws Exception{
+        File file = new File("other");//在IOStream文件目录下创建other文件夹
+        boolean newFile = file.createNewFile();//idea项目中相对路径创建的不是文件夹
+        System.out.println(newFile);
+        System.out.println("-------------------");
+        File file2 = new File("D:/idea/code/javaSenior/IOStream/other2");//在IOStream文件目录下创建other文件夹
+        boolean newFile2 = file2.createNewFile();//idea项目中绝对路径创建的不是文件夹
+        System.out.println(newFile2);
+        System.out.println("--------------------");
+        File file3 = new File("D:/idea/other/io/fileCreate");//在IOStream文件目录下创建other文件夹
+        boolean newFile3 = file3.createNewFile();//idea项目中绝对路径创建的不是文件夹
+        System.out.println(newFile3);
+    }
 }
