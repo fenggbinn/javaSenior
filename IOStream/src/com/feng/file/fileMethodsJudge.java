@@ -33,6 +33,20 @@ public class fileMethodsJudge {
 
     @Test
     public void test3(){
+        File file1 = new File("hi.txt");
+        File file2 = new File("D:/idea/other/io/file");
+        System.out.println(file1.canRead());
+        System.out.println(file2.canRead());
+        System.out.println("---------");
+        System.out.println(file1.canWrite());
+        System.out.println(file2.canWrite());
+        System.out.println("---------");
+        System.out.println(file1.isHidden());
+        System.out.println(file2.isHidden());
+    }
+
+    @Test
+    public void test4(){
         File file = new File("kk.txt");
         File file1 = new File("hi.txt");
         File file2 = new File("D:/idea/other/io/file");
