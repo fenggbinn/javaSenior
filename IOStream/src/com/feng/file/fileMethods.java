@@ -65,5 +65,27 @@ public class fileMethods {
          * Process finished with exit code 0
          */
 
+        /**
+         * 存在相应的文件，并且文件中有值：
+         * --------file1的方法：相对路径下---------
+         * D:\idea\code\javaSenior\IOStream\fi1.txt
+         * fi1.txt
+         * fi1.txt
+         * null
+         * 51
+         * 1622765904775
+         * null
+         * null
+         * --------file2的方法：绝对路径下---------
+         * D:\idea\other\io\file\fi2.txt
+         * D:\idea\other\io\file\fi2.txt
+         * fi2.txt
+         * D:\idea\other\io\file
+         * 24
+         * 1622766123740
+         * null
+         * null
+         */
+
     }
 }
