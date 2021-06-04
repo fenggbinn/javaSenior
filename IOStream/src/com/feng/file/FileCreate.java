@@ -51,4 +51,11 @@ public class FileCreate {
             System.out.println("文件目录删除成功");
         }
     }
+
+    @Test
+    public void test4(){
+        File file = new File("d:/idea/other/io/filetest/filell");
+        boolean mkdirs = file.mkdirs();//mkdirs()创建多级目录，当层级目录不存在，可以直接创建，mkdir()不能创建多级目录
+        System.out.println(mkdirs);
+    }
 }
