@@ -48,6 +48,7 @@ public class FileInputStreamTest {
             File file = new File("01_io.png");
             File file2 = new File("02_io.png");
             fi = new FileInputStream(file);
+            fo = new FileOutputStream(file2);//第一次忘记写这一句实例化fo对象，报了空指针异常
 //            byte[] bytes = new byte[4];//使用FileInputStream不适合读取文本文件，文本文件最好使用字符流
             byte[] bytes = new byte[5];
             int len;
