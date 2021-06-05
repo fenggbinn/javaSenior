@@ -73,13 +73,25 @@ public class bufferTest {
         BufferedWriter bw = null;
         try {
             br = new BufferedReader(new FileReader(new File("bufferReader1.txt")));
-            bw = new BufferedWriter(new FileWriter(new File("bufferWriter1.txt"),true));
+            bw = new BufferedWriter(new FileWriter(new File("bufferWriter1.txt")));
 
             char[] c = new char[1024];
-            int len;
+            //方式一：
+            /*int len;
             while ((len = br.read(c))!=-1){
                 String str = new String(c,0,len);
                 bw.write(str);
+            }*/
+            //方式二：
+            String string;
+            while ((string = br.readLine())!= null){
+//                String str = new String(c,0,len);
+//                bw.write(string);//这个不包含换行符
+                //添加换行方法一：
+//                bw.write(string+"\n");//这个不包含换行符
+                //添加换行方法二：
+                bw.write(string);
+                bw.newLine();
             }
         } catch (IOException e) {
             e.printStackTrace();
