@@ -80,9 +80,12 @@ public class FileReaderWriterTest {
             char[] cbuffer = new char[5];
             int len;
             while ((len=fr.read(cbuffer))!=-1){
-                for (int i = 0; i < len; i++) {
-                    System.out.print(cbuffer[i]);
-                }
+                //fileReader的重载方法的第一种方式：for循环遍历存入char[]数组中的值
+//                for (int i = 0; i < len; i++) {
+//                    System.out.print(cbuffer[i]);
+//                }
+                String str = new String(cbuffer,0,len);
+                System.out.print(str);
 //                System.out.println(len);
             }
         } catch (IOException e) {
