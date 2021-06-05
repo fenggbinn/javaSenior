@@ -5,6 +5,11 @@ import org.junit.Test;
 import java.io.*;
 
 public class bufferTest {
+
+    /**
+     * BufferedInputStream
+     * BufferedOutputStream
+     */
     @Test
     public void test1(){
         FileInputStream fi1 = null;
@@ -56,7 +61,39 @@ public class bufferTest {
                 }
             }
         }
+    }
 
+    /**
+     * BufferedReader
+     * BufferedWriter
+     */
+    @Test
+    public void test2(){
+        BufferedReader br = null;
+        BufferedWriter bw = null;
+        try {
+            br = new BufferedReader(new FileReader(new File("bufferReader1.txt")));
+            bw = new BufferedWriter(new FileWriter(new File("bufferWriter1.txt"),true));
 
+            char[] c = new char[1024];
+            int len;
+            while ((len = br.read(c))!=-1){
+                String str = new String(c,0,len);
+                bw.write(str);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                br.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                bw.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
