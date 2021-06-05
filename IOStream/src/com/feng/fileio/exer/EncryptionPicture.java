@@ -1,4 +1,4 @@
-package com.feng.fileio;
+package com.feng.fileio.exer;
 
 import org.junit.Test;
 
