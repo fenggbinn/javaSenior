@@ -24,7 +24,7 @@ import java.io.IOException;
  4.资源的关闭
 
  */
-public class FileReaderWriterTest {
+public class FileReaderTest {
     @Test
     //方式一：throws Exception
 //    public void test1() throws Exception {
