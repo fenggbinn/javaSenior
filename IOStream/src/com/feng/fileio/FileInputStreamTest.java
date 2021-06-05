@@ -2,10 +2,7 @@ package com.feng.fileio;
 
 import org.junit.Test;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * 结论:|
@@ -33,6 +30,50 @@ public class FileInputStreamTest {
             if (fi!=null){
                 try {
                     fi.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+    }
+
+    //使用FileInputStream适合读取图片等等类型文件
+    @Test
+    public void test2(){
+
+        FileInputStream fi = null;
+        FileOutputStream fo = null;
+        try {
+            File file = new File("01_io.png");
+            File file2 = new File("02_io.png");
+            fi = new FileInputStream(file);
+//            byte[] bytes = new byte[4];//使用FileInputStream不适合读取文本文件，文本文件最好使用字符流
+            byte[] bytes = new byte[5];
+            int len;
+            while ((len=fi.read(bytes))!=-1){
+//                String str = new String(bytes,0,len);
+//                System.out.print(str);
+                fo.write(bytes,0,len);
+                /**
+                 * ava.lang.NullPointerException
+                 * 	at com.feng.fileio.FileInputStreamTest.test2(FileInputStreamTest.java:57)
+                 * 	...
+                 */
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fi!=null){
+                try {
+                    fi.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (fo!=null){
+                try {
+                    fo.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
