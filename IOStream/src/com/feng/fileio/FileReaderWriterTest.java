@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 
 /**
  * —、流的分类:
@@ -16,17 +17,87 @@ import java.io.FileReader;
  * Reader         FiLeReader            BufferedReader
  * writer         Filewriter            BufferedWriter
 
+ 二、方法的四步：
+ 1.File类的实例化
+ 2.FileReader流的实例化
+ 3.读入的操作
+ 4.资源的关闭
+
  */
 public class FileReaderWriterTest {
     @Test
-    public void test1() throws Exception {
-        File file = new File("hi.txt");
-        FileReader reader = new FileReader(file);
-        int read = reader.read();
+    //方式一：throws Exception
+//    public void test1() throws Exception {
+    //方式二：try catch
+    public void test1(){
+        FileReader reader=null;
+        try {
+            File file = new File("hi.txt");
+
+            reader = new FileReader(file);
+        /*int read = reader.read();
         while (read!=-1){
             System.out.print((char) read);
             read = reader.read();
         }
-        reader.close();
+        reader.close();*/
+            int read;
+            while ((read=reader.read())!=-1){
+                System.out.print((char) read);
+    //            read = reader.read();
+            }
+//            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if (reader!=null){
+                    reader.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+            }
+        }
+
+    }
+
+    /**
+     * 使用read的重载方法对read()升级
+     *char[]数组，字符流，数据存放到数组中，每次读取更多，效率更高
+     * 二、方法的四步：
+     *  1.File类的实例化
+     *  2.FileReader流的实例化
+     *  3.读入的操作
+     *  4.资源的关闭
+     */
+    @Test
+    public void test2(){
+        FileReader fr = null;
+        try {
+            File file = new File("hello.txt");
+            fr = new FileReader(file);
+            char[] cbuffer = new char[5];
+            int len;
+            while ((len=fr.read(cbuffer))!=-1){
+                for (int i = 0; i < len; i++) {
+                    System.out.print(cbuffer[i]);
+                }
+//                System.out.println(len);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fr!=null){
+                try {
+                    fr.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+                }
+            }
+
+        }
+
     }
 }
