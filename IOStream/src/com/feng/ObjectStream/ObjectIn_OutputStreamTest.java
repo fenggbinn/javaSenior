@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.io.*;
 
-public class ObjectInputStreamTest {
+public class ObjectIn_OutputStreamTest {
     @Test
     public void test1(){
         //ObjectInputStream ois = null;
@@ -27,6 +27,37 @@ public class ObjectInputStreamTest {
 //                }
                 if (oos != null) {
                     oos.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Test
+    public void test2(){
+        ObjectInputStream ois = null;
+        try {
+            ois = new ObjectInputStream(new FileInputStream("oos.dat"));
+            Object o = null;
+            try {
+                o = ois.readObject();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+            System.out.println((String)o);
+            /*int len;
+            byte[] bytes = new byte[10];
+            while ((len=ois.read(bytes))!=-1){
+                String str = new String(bytes,0,len);
+                System.out.println(str);
+            }*/
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (ois != null) {
+                    ois.close();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
