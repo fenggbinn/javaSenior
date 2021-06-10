@@ -18,6 +18,7 @@ public class ObjectIn_OutputStreamTest {
 //                oos.write(chars,0,len);
 //            }
             oos.writeObject(new String("kdf看看"));
+            oos.flush();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
