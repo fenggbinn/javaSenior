@@ -46,6 +46,7 @@ public class ObjectIn_OutputStreamTest {
             Person person=null;
             //Person person2=null;
             String str=null;
+            Object o1=null;
             try {
                 o = ois.readObject();
                 person = (Person)ois.readObject();
@@ -58,7 +59,8 @@ public class ObjectIn_OutputStreamTest {
                  * Person{id=101, name='留白', age=99, gender='女'}
                  * test对象流的读取方式
                  */
-                str = (String)ois.readObject();
+                //str = (String)ois.readObject();
+                o1 = ois.readObject();
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
@@ -72,6 +74,7 @@ public class ObjectIn_OutputStreamTest {
                 String str = new String(bytes,0,len);
                 System.out.println(str);
             }*/
+            System.out.println(o1);
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
