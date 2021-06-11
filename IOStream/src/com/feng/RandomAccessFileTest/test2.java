@@ -29,4 +29,33 @@ public class test2 {
         f.write(("明天").getBytes());
         f.close();
     }
+
+    @Test//在中间添加
+    public void test4(){
+        RandomAccessFile file = null;
+        try {
+            file = new RandomAccessFile("randomAccessFile3.txt","rw");
+            file.seek(3);   //指针指向3这个位置，保存后面的值到StringBuilder；
+            StringBuilder builder = new StringBuilder((int) new File("randomAccessFile3.txt").length());
+            byte[] bytes = new byte[1024];
+            int len;
+            while((len=file.read(bytes))!=-1){
+                builder.append(new String(bytes,0,len));
+            }
+            file.seek(3);//刚刚保存文件到builder的时候把指针指向到了末尾了，重新指向3开始添加
+            file.write("123".getBytes());
+            //现在指针就是在添加好的值的末尾
+            file.write(builder.toString().getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (file != null) {
+                try {
+                    file.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 }
