@@ -21,4 +21,12 @@ public class test2 {
         f.write(("明天").getBytes());
         f.close();
     }
+
+    @Test//调用seek方法，指定插入位置
+    public void test3() throws IOException {
+        RandomAccessFile f = new RandomAccessFile("randomAccessFile2.txt","rw");
+        f.seek(2);
+        f.write(("明天").getBytes());
+        f.close();
+    }
 }
