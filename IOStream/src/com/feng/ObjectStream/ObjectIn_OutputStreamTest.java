@@ -18,6 +18,7 @@ public class ObjectIn_OutputStreamTest {
 //                oos.write(chars,0,len);
 //            }
             oos.writeObject(new String("kdf看看"));
+            oos.writeObject(new Person(101,"留白",99,"女"));//java.io.NotSerializableException: com.feng.ObjectStream.Person
             oos.flush();
         } catch (IOException e) {
             e.printStackTrace();
