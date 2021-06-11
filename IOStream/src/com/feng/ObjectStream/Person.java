@@ -3,6 +3,11 @@ package com.feng.ObjectStream;
 import java.io.Serializable;
 
 public class Person implements Serializable {
+
+    //最好加上serialVersionUID，不然有修改可能识别不了，系统默认的可能会导致修改之后就不同了
+    //可以用private，当然public也可以
+    //private static final long serialVersionUID = 12399923L;
+    public static final long serialVersionUID = 12399923L;
     private int id;
     private String name;
     private int age;
