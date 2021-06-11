@@ -42,12 +42,15 @@ public class ObjectIn_OutputStreamTest {
         try {
             ois = new ObjectInputStream(new FileInputStream("oos.dat"));
             Object o = null;
+            Person person=null;
             try {
                 o = ois.readObject();
+                person = (Person)ois.readObject();
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
             System.out.println((String)o);
+            System.out.println(person);
             /*int len;
             byte[] bytes = new byte[10];
             while ((len=ois.read(bytes))!=-1){
