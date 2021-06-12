@@ -3,9 +3,7 @@ package com.feng.TCP;
 import com.feng.IP_InetAddress.InetAddressTest;
 import org.junit.Test;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -44,10 +42,15 @@ public class TCPTest1 {
             inputStream = socket.getInputStream();
             byte[] bytes = new byte[4];
             int len;
+            //方式二：
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
             while ((len = inputStream.read(bytes))!=-1){
-                String str = new String(bytes,0,len);
-                System.out.print(str);
+                //方式一：
+                /*String str = new String(bytes,0,len);
+                System.out.print(str);*/
+                baos.write(bytes,0,len);
             }
+            System.out.println(baos.toString());
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
