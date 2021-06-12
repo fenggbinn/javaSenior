@@ -37,6 +37,10 @@ public class TCPTest3 {
              * 	at com.feng.TCP.TCPTest3.client(TCPTest3.java:35)
              */
             //接收服务器发送的反馈信息
+            socket.shutdownOutput();
+            /**
+             * 图片我收到了
+             */
             inputStream = socket.getInputStream();
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             byte[] b2 = new byte[1024];
@@ -86,7 +90,7 @@ public class TCPTest3 {
                 file.mkdir();
             }
             fo = new FileOutputStream(file+"\\001_out.png");*/
-            fo = new FileOutputStream("d:/test/001_out_反馈.png");
+            fo = new FileOutputStream("d:/test/001_out_反馈2.png");
             b = new byte[1024];
             int len;
             while ((len=in.read(b))!=-1){
