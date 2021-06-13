@@ -22,7 +22,12 @@ public class TCPTest3 {
                 file.mkdir();
             }
             f = new FileInputStream(file+"\\001.png");*/
-            f= new FileInputStream("d:/test/001.png");
+//            f= new FileInputStream("d:/test/001.png");
+            File file = new File("d:\\test\\javaSenior\\NetworkProgramming");
+            if (!file.isDirectory()){
+                file.mkdirs();
+            }
+            f = new FileInputStream(file+"\\001.png");
             byte[] b = new byte[1024];
             int len;
             while ((len=f.read(b))!=-1){
