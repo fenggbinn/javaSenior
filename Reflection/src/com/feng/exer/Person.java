@@ -1,5 +1,7 @@
 package com.feng.exer;
 
+import com.sun.xml.internal.ws.api.ha.StickyFeature;
+
 @MyAnnotation(value = "hi")
 public class Person extends Creature<String> implements Comparable<String> ,MyInterface{
 
@@ -40,5 +42,10 @@ public class Person extends Creature<String> implements Comparable<String> ,MyIn
     @Override
     public void info() {
         System.out.println("I‘m a person");
+    }
+
+    private static String show2(String nation){
+        System.out.println("我的国籍是"+nation);
+        return nation;
     }
 }
