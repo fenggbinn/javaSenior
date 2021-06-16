@@ -8,7 +8,8 @@ import java.lang.annotation.Target;
 import static java.lang.annotation.ElementType.*;
 
 @Target({TYPE, FIELD,METHOD,PARAMETER,CONSTRUCTOR,LOCAL_VARIABLE})
-@Retention(RetentionPolicy.RUNTIME)
+//@Retention(RetentionPolicy.RUNTIME)
+@Retention(RetentionPolicy.CLASS)
 public @interface MyAnnotation {
     String value() default "hello";
 }
