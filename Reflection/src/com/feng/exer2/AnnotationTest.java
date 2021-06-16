@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 
 public class AnnotationTest {
     @Test
@@ -20,6 +21,13 @@ public class AnnotationTest {
                 System.out.println("进入了annotation的foreach循环里面");
                 System.out.println(aa);
             }
+
+            //获取权限修饰符
+            System.out.print(Modifier.toString(a.getModifiers())+"\t");
+            //获取返回值类型
+            System.out.print(a.getReturnType().getName()+"\t");
+            //获取方法名
+            System.out.println(a.getName());
         }
     }
 }
